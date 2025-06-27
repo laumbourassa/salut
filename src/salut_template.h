@@ -1,9 +1,9 @@
 /*
- * salut_template.h - Statically Allocated Look Up Table (SALUT) template
+ * salut_template.h - Statically Allocated Look-Up Table (SALUT) template
  * 
  * Copyright (c) 2025 Laurent Mailloux-Bourassa
  * 
- * This file is part of the Statically Allocated Look Up Table (SALUT) library.
+ * This file is part of the Statically Allocated Look-Up Table (SALUT) library.
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -228,4 +228,4 @@ _LUT_ACCESSOR(LUT_NAME, LUT_TYPE, LUT_SIZE)
 #undef LUT_SIZE
 #undef LUT_FUNC
 
-/* salut_gen.h - EOF */
+/* salut_template.h - EOF */
