@@ -1,20 +1,20 @@
 /*
  * salut_template.h - Statically Allocated Look-Up Table (SALUT) template
- * 
+ *
  * Copyright (c) 2025 Laurent Mailloux-Bourassa
- * 
+ *
  * This file is part of the Statically Allocated Look-Up Table (SALUT) library.
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -55,6 +55,12 @@
 #endif
 #ifndef LUT_FUNC
 	#error "Must define LUT_FUNC(i) before including salut_template.h"
+#endif
+#if (LUT_SIZE) < (_LUT_MIN)
+	#error "LUT_SIZE can't be less than _LUT_MIN"
+#endif
+#if (LUT_SIZE) > (_LUT_MAX)
+	#error "LUT_SIZE can't be greater than _LUT_MAX"
 #endif
 
 #define _LUT_OFF15  0
