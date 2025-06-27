@@ -83,4 +83,4 @@
 #define _LUT_BEXP14(s)  _LUT_BEXP13(s)  _LUT_BEXP13(((s)+8192))
 #define _LUT_BEXP15(s)  _LUT_BEXP14(s)  _LUT_BEXP14(((s)+16384))
 
-#endif /* salut.h */
+#endif /* SALUT_H */
