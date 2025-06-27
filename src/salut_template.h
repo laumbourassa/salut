@@ -45,16 +45,16 @@
     #include "salut.h"
 #endif
 #ifndef LUT_NAME
-	#error "Must define LUT_NAME before including salut_gen.h"
+	#error "Must define LUT_NAME before including salut_template.h"
 #endif
 #ifndef LUT_TYPE
-	#error "Must define LUT_TYPE before including salut_gen.h"
+	#error "Must define LUT_TYPE before including salut_template.h"
 #endif
 #ifndef LUT_SIZE
-	#error "Must define LUT_SIZE before including salut_gen.h"
+	#error "Must define LUT_SIZE before including salut_template.h"
 #endif
 #ifndef LUT_FUNC
-	#error "Must define LUT_FUNC(i) before including salut_gen.h"
+	#error "Must define LUT_FUNC(i) before including salut_template.h"
 #endif
 
 #define _LUT_OFF15  0
