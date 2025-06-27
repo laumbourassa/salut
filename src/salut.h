@@ -68,7 +68,7 @@
 // Power-of-two blocks built recursively
 #define _LUT_BEXP0(s)   _LUT_E(s)
 #define _LUT_BEXP1(s)   _LUT_BEXP0(s)   _LUT_BEXP0(((s)+1))
-#define _LUT_BEXP2(s)   _LUT_BEXP1(s)	_LUT_BEXP1(((s)+2))
+#define _LUT_BEXP2(s)   _LUT_BEXP1(s)   _LUT_BEXP1(((s)+2))
 #define _LUT_BEXP3(s)   _LUT_BEXP2(s)   _LUT_BEXP2(((s)+4))
 #define _LUT_BEXP4(s)   _LUT_BEXP3(s)   _LUT_BEXP3(((s)+8))
 #define _LUT_BEXP5(s)   _LUT_BEXP4(s)   _LUT_BEXP4(((s)+16))
