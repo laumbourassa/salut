@@ -1,9 +1,9 @@
 /*
- * salut.h - Statically Allocated Look Up Table (SALUT) core
+ * salut.h - Statically Allocated Look-Up Table (SALUT) core
  * 
  * Copyright (c) 2025 Laurent Mailloux-Bourassa
  * 
- * This file is part of the Statically Allocated Look Up Table (SALUT) library.
+ * This file is part of the Statically Allocated Look-Up Table (SALUT) library.
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
