@@ -50,13 +50,13 @@
 #define _LUT_E(i)	[i] = (LUT_FUNC(i)),
 
 // Check if the nth bit is set (1)
-#define _LUT_HAS_BIT(n) ((LUT_SIZE) & (1u << (n)))
+#define _LUT_HAS_BIT(n)	((LUT_SIZE) & (1u << (n)))
 
 // Helper to invoke a block
-#define _LUT_EMIT(n)    _LUT_BEXP##n(_LUT_OFF##n)
+#define _LUT_EMIT(n)	_LUT_BEXP##n(_LUT_OFF##n)
 
 // Helper macro to paste the accessor function name together
-#define _LUT_PASTE(a,b)  a##b
+#define _LUT_PASTE(a,b)	a##b
 
 // Inline accessor
 #define _LUT_ACCESSOR(name, type, size)						\
@@ -68,7 +68,7 @@
 // Power-of-two blocks built recursively
 #define _LUT_BEXP0(s)   _LUT_E(s)
 #define _LUT_BEXP1(s)   _LUT_BEXP0(s)   _LUT_BEXP0(((s)+1))
-#define _LUT_BEXP2(s)   _LUT_BEXP1(s)   _LUT_BEXP1(((s)+2))
+#define _LUT_BEXP2(s)   _LUT_BEXP1(s)	_LUT_BEXP1(((s)+2))
 #define _LUT_BEXP3(s)   _LUT_BEXP2(s)   _LUT_BEXP2(((s)+4))
 #define _LUT_BEXP4(s)   _LUT_BEXP3(s)   _LUT_BEXP3(((s)+8))
 #define _LUT_BEXP5(s)   _LUT_BEXP4(s)   _LUT_BEXP4(((s)+16))
