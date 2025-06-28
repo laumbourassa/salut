@@ -18,17 +18,18 @@ SALUT allows multiple LUTs to coexist in a single translation unit without colli
 
 ### Files
 
-- `salut.h` — Core macros and helpers (does not generate code directly).
+- `salut_core.h` — Core macros and helpers (does not generate code directly).
 - `salut_template.h` — LUT code generation template.
+- `salut_waveforms.h` — Base waveform generation macros
 
 ### Example Usage
 
 To generate a LUT of 100 floats with the formula `0.05f * i + 1`, do the following:
 
 ```c
-#define LUT_NAME   my_lut           // Base symbol name for this LUT
-#define LUT_TYPE   float            // LUT entry type
-#define LUT_SIZE   100              // Number of elements
+#define LUT_NAME    my_lut          // Base symbol name for this LUT
+#define LUT_TYPE    float           // LUT entry type
+#define LUT_SIZE    100             // Number of elements
 #define LUT_FUNC(i) (0.05f*(i)+1)   // Expression to compute entry 'i'
 #include "salut_template.h"
 
@@ -45,6 +46,51 @@ Once generated, the following will exist:
   The statically generated LUT.
 - `static inline LUT_TYPE my_lut_get(size_t index);`  
   Safe accessor (returns 0 for out-of-bounds access).
+
+### Waveforms
+
+You can also use predefined macros from `salut_waveforms.h` to generate waveforms.
+
+```c
+#include "salut_waveforms.h"
+
+// Sine wave (Purple)
+#define LUT_NAME    sine_lut
+#define LUT_TYPE    float
+#define LUT_SIZE    100
+#define LUT_FUNC(i) LUT_FUNC_SINE_WAVE(i, 5.0f, 5.0f)
+#include "salut_template.h"
+
+// Cosine wave (Orange)
+#define LUT_NAME    cosine_lut
+#define LUT_TYPE    float
+#define LUT_SIZE    100
+#define LUT_FUNC(i) LUT_FUNC_COSINE_WAVE(i, 5.0f, 5.0f)
+#include "salut_template.h"
+
+// Square wave (Green)
+#define LUT_NAME    square_lut
+#define LUT_TYPE    float
+#define LUT_SIZE    100
+#define LUT_FUNC(i) LUT_FUNC_SQUARE_WAVE(i, 5.0f, 5.0f, 0.5f)
+#include "salut_template.h"
+
+// Triangle wave (Red)
+#define LUT_NAME    triangle_lut
+#define LUT_TYPE    float
+#define LUT_SIZE    100
+#define LUT_FUNC(i) LUT_FUNC_TRIANGLE_WAVE(i, 5.0f, 5.0f)
+#include "salut_template.h"
+
+// Sawtooth wave (Blue)
+#define LUT_NAME    sawtooth_lut
+#define LUT_TYPE    float
+#define LUT_SIZE    100
+#define LUT_FUNC(i) LUT_FUNC_SAWTOOTH_WAVE(i, 5.0f, 5.0f)
+#include "salut_template.h"
+```
+
+![Waveform results](waveforms.png)
 
 ### Notes
 
