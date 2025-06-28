@@ -1,5 +1,5 @@
 /*
- * salut.h - Statically Allocated Look-Up Table (SALUT) core
+ * salut_core.h - Statically Allocated Look-Up Table (SALUT) core
  *
  * Copyright (c) 2025 Laurent Mailloux-Bourassa
  *
@@ -22,33 +22,16 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
- * To use:
- *     #define LUT_NAME    my_lut          // base identifier
- *     #define LUT_TYPE    float           // element type
- *     #define LUT_SIZE    100             // number of entries
- *     #define LUT_FUNC(i) (0.05f*(i)+1)  // any expression in i, where i is the index
- *     #include "salut_template.h"
- *
- *     // Now you have:
- *     //   static const LUT_TYPE my_lut[LUT_SIZE];
- *     //   inline LUT_TYPE my_lut_get(size_t index);
- *
- *     // These macros are undefined to make the template reusable for another LUT
- *     #undef LUT_NAME
- *     #undef LUT_TYPE
- *     #undef LUT_SIZE
- *     #undef LUT_FUNC
  */
 
-#ifndef SALUT_H
-#define SALUT_H
+#ifndef SALUT_CORE_H
+#define SALUT_CORE_H
 
 #include <stddef.h>
 
-// Extremums supported
-#define _LUT_MIN	(1)
-#define _LUT_MAX	(65535)
+// Size extremums
+#define _LUT_SIZE_MIN	(1)
+#define _LUT_SIZE_MAX	(65535)
 
 // Single-entry macro
 #define _LUT_E(i)	[i] = (LUT_FUNC(i)),
@@ -87,4 +70,4 @@
 #define _LUT_BEXP14(s)  _LUT_BEXP13(s)  _LUT_BEXP13(((s)+8192))
 #define _LUT_BEXP15(s)  _LUT_BEXP14(s)  _LUT_BEXP14(((s)+16384))
 
-#endif /* SALUT_H */
+#endif /* SALUT_CORE_H */

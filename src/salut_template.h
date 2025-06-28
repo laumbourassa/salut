@@ -41,8 +41,8 @@
  *     #undef LUT_FUNC
  */
 
-#ifndef SALUT_H
-    #include "salut.h"
+#ifndef SALUT_CORE_H
+    #include "salut_core.h"
 #endif
 #ifndef LUT_NAME
 	#error "Must define LUT_NAME before including salut_template.h"
@@ -56,11 +56,11 @@
 #ifndef LUT_FUNC
 	#error "Must define LUT_FUNC(i) before including salut_template.h"
 #endif
-#if (LUT_SIZE) < (_LUT_MIN)
-	#error "LUT_SIZE can't be less than _LUT_MIN"
+#if (LUT_SIZE) < (_LUT_SIZE_MIN)
+	#error "LUT_SIZE can't be less than _LUT_SIZE_MIN"
 #endif
-#if (LUT_SIZE) > (_LUT_MAX)
-	#error "LUT_SIZE can't be greater than _LUT_MAX"
+#if (LUT_SIZE) > (_LUT_SIZE_MAX)
+	#error "LUT_SIZE can't be greater than _LUT_SIZE_MAX"
 #endif
 
 #define _LUT_OFF15  0
@@ -234,4 +234,4 @@ _LUT_ACCESSOR(LUT_NAME, LUT_TYPE, LUT_SIZE)
 #undef LUT_SIZE
 #undef LUT_FUNC
 
-/* salut_template.h - EOF */
+/* EOF */
