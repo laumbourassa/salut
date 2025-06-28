@@ -42,7 +42,7 @@
 
 // Cosine wave, Bhaskara's approximation
 #define LUT_FUNC_COSINE_WAVE(i, A, dc) \
-    LUT_FUNC_SINE_WAVE(( ( (i) + (LUT_SIZE/4) ) % LUT_SIZE ), A, dc)
+    LUT_FUNC_SINE_WAVE((((i) + ((LUT_SIZE)/4)) % (LUT_SIZE)), A, dc)
 
 // Square wave
 #define LUT_FUNC_SQUARE_WAVE(i, A, dc, duty) \
